@@ -1,0 +1,95 @@
+.step-rail {
+  display: flex;
+  flex-direction: column;
+}
+
+.rail-item {
+  display: flex;
+  gap: 16px;
+}
+
+.rail-node-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rail-node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-faint);
+  transition: all 0.2s ease;
+}
+
+.rail-node--active {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(79, 127, 255, 0.15);
+}
+
+.rail-node--done {
+  background: rgba(45, 212, 191, 0.12);
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+}
+
+.rail-node--upcoming:disabled {
+  cursor: default;
+}
+
+.rail-line {
+  width: 2px;
+  flex: 1;
+  min-height: 34px;
+  margin: 2px 0;
+  border-radius: 2px;
+}
+
+.rail-line--filled {
+  background: var(--accent-teal);
+}
+
+.rail-line--empty {
+  background: var(--border);
+}
+
+.rail-text-col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-bottom: 26px;
+}
+
+.rail-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-faint);
+}
+
+.rail-label--active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.rail-label--done {
+  color: var(--text-dim);
+}
+
+.rail-step-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+  margin-top: 3px;
+}
