@@ -9,20 +9,19 @@ export default function StepRail({ steps, currentIndex, onStepClick }) {
 
         return (
           <div className="rail-item" key={step.id}>
-            <div className="rail-node-col">
-              <button
-                className={`rail-node rail-node--${state}`}
-                onClick={() => onStepClick(i)}
-                disabled={state === 'upcoming'}
-                aria-current={state === 'active' ? 'step' : undefined}
-              >
-                {state === 'done' ? '✓' : i + 1}
-              </button>
+            <div className="rail-node-row">
+              <div className="rail-node-col">
+                <button
+                  className={`rail-node rail-node--${state}`}
+                  onClick={() => onStepClick(i)}
+                  disabled={state === 'upcoming'}
+                  aria-current={state === 'active' ? 'step' : undefined}
+                >
+                  {state === 'done' ? '✓' : i + 1}
+                </button>
+                <span className={`rail-label rail-label--${state}`}>{step.label}</span>
+              </div>
               {!isLast && <div className={`rail-line rail-line--${state === 'done' ? 'filled' : 'empty'}`} />}
-            </div>
-            <div className="rail-text-col">
-              <span className={`rail-label rail-label--${state}`}>{step.label}</span>
-              <span className="rail-step-tag">STEP {String(i + 1).padStart(2, '0')}</span>
             </div>
           </div>
         );

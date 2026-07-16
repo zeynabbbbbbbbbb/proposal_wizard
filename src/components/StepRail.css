@@ -1,29 +1,41 @@
 .step-rail {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
 }
 
 .rail-item {
   display: flex;
-  gap: 16px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.rail-item:last-child {
+  flex: 0;
+}
+
+.rail-node-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .rail-node-col {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .rail-node {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   flex-shrink: 0;
   border: 1.5px solid var(--border);
   background: var(--surface);
@@ -35,13 +47,13 @@
   background: var(--accent-gradient);
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 0 0 4px rgba(79, 127, 255, 0.15);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .rail-node--done {
-  background: rgba(45, 212, 191, 0.12);
-  border-color: var(--accent-teal);
-  color: var(--accent-teal);
+  background: var(--success-soft);
+  border-color: var(--success);
+  color: var(--success);
 }
 
 .rail-node--upcoming:disabled {
@@ -49,36 +61,31 @@
 }
 
 .rail-line {
-  width: 2px;
   flex: 1;
-  min-height: 34px;
-  margin: 2px 0;
+  height: 2px;
+  margin: 0 6px;
   border-radius: 2px;
 }
 
 .rail-line--filled {
-  background: var(--accent-teal);
+  background: var(--success);
 }
 
 .rail-line--empty {
   background: var(--border);
 }
 
-.rail-text-col {
-  display: flex;
-  flex-direction: column;
-  padding-top: 6px;
-  padding-bottom: 26px;
-}
-
 .rail-label {
-  font-size: 14px;
+  margin-top: 8px;
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--text-faint);
+  text-align: center;
+  max-width: 84px;
 }
 
 .rail-label--active {
-  color: var(--text);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -86,10 +93,8 @@
   color: var(--text-dim);
 }
 
-.rail-step-tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--text-faint);
-  letter-spacing: 0.05em;
-  margin-top: 3px;
+@media (max-width: 640px) {
+  .rail-label {
+    display: none;
+  }
 }

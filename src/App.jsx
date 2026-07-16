@@ -67,16 +67,15 @@ export default function App() {
 
   return (
     <div className="wizard-shell">
-      <aside className="wizard-rail-panel">
-        <div className="brand">
-          <span className="brand-mark">WSP</span>
+      <div className="wizard-card">
+        <div className="wizard-header">
+          <span className="brand-mark">W</span>
           <span className="brand-name">Proposal Builder</span>
         </div>
-        <StepRail steps={STEPS} currentIndex={stepIndex} onStepClick={goToStep} />
-      </aside>
 
-      <main className="wizard-main">
-        <div className="wizard-card">
+        <StepRail steps={STEPS} currentIndex={stepIndex} onStepClick={goToStep} />
+
+        <div className="wizard-body">
           {renderStep()}
 
           <div className="wizard-nav">
@@ -85,12 +84,12 @@ export default function App() {
               onClick={goBack}
               disabled={stepIndex === 0}
             >
-              Back
+              Previous
             </button>
 
             {stepIndex < STEPS.length - 1 ? (
               <button className="btn btn-primary" onClick={goNext} disabled={!canAdvance()}>
-                Next
+                Next step
               </button>
             ) : (
               <span className="wizard-nav-end-hint">
@@ -99,7 +98,7 @@ export default function App() {
             )}
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
