@@ -1,0 +1,122 @@
+.illustration-panel {
+  position: relative;
+  width: 280px;
+  flex-shrink: 0;
+  background: linear-gradient(160deg, var(--panel-bg-1) 0%, var(--panel-bg-2) 100%);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  padding: 32px 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.blob-a {
+  width: 180px;
+  height: 180px;
+  top: -60px;
+  right: -60px;
+}
+
+.blob-b {
+  width: 130px;
+  height: 130px;
+  bottom: -40px;
+  left: -50px;
+}
+
+.illustration-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.illustration-brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration-brand-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.illustration-icon-wrap {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.illustration-icon {
+  width: 110px;
+  height: 110px;
+  color: #ffffff;
+}
+
+.illustration-step-label {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+
+.illustration-step-caption {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12.5px;
+  margin: 0 0 18px;
+}
+
+.illustration-dots {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 6px;
+}
+
+.illustration-dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.25s ease;
+}
+
+.illustration-dot--active {
+  width: 20px;
+  background: #ffffff;
+}
+
+.illustration-dot--done {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 720px) {
+  .illustration-panel {
+    display: none;
+  }
+}

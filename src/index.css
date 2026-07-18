@@ -1,29 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  --bg: #eef1f8;
-  --surface: #ffffff;
-  --surface-2: #f5f7fb;
-  --border: #e3e7f1;
-  --border-soft: #ececf3;
-  --text: #1f2430;
-  --text-dim: #6b7280;
-  --text-faint: #a1a7b8;
+  --page-bg-1: #241f45;
+  --page-bg-2: #3c3178;
 
-  --accent: #4f6ef7;
-  --accent-dark: #3d5ce0;
-  --accent-soft: #eaefff;
-  --accent-gradient: linear-gradient(135deg, #4f6ef7 0%, #6366f1 100%);
+  --card-bg: #fbf6ec;
+  --panel-bg-1: #9186e6;
+  --panel-bg-2: #6f5fd6;
 
-  --success: #22c55e;
-  --success-soft: #e8f9ee;
+  --text-dark: #2a2550;
+  --text-dim: #6f6a94;
+  --text-faint: #b0abcf;
+  --cream: #fbf6ec;
+  --cream-dim: #ece4d3;
+
+  --accent: #6f5fd6;
+  --accent-soft: #ece9fb;
+  --success: #2fbf87;
+  --success-soft: #e3f8ef;
   --danger: #f0605c;
 
-  --font-display: 'Poppins', sans-serif;
+  --font-display: 'Fredoka', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --radius: 12px;
-  --radius-lg: 20px;
+  --radius: 14px;
+  --radius-lg: 28px;
 }
 
 * { box-sizing: border-box; }
@@ -34,15 +35,15 @@ html, body, #root {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: linear-gradient(160deg, var(--page-bg-1) 0%, var(--page-bg-2) 100%);
+  color: var(--text-dark);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  color: var(--text);
+  color: var(--text-dark);
   margin: 0;
 }
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import StepRail from './components/StepRail';
+import IllustrationPanel from './components/IllustrationPanel';
 import ClientInfoStep from './components/ClientInfoStep';
 import ScopeStep from './components/ScopeStep';
 import TimelineStep from './components/TimelineStep';
@@ -68,28 +69,29 @@ export default function App() {
   return (
     <div className="wizard-shell">
       <div className="wizard-card">
-        <div className="wizard-header">
-          <span className="brand-mark">W</span>
-          <span className="brand-name">Proposal Builder</span>
-        </div>
+        <IllustrationPanel steps={STEPS} currentIndex={stepIndex} />
 
-        <StepRail steps={STEPS} currentIndex={stepIndex} onStepClick={goToStep} />
+        <div className="wizard-form-panel">
+          <StepRail steps={STEPS} currentIndex={stepIndex} onStepClick={goToStep} />
 
-        <div className="wizard-body">
-          {renderStep()}
+          <div className="wizard-body">
+            {renderStep()}
+          </div>
 
           <div className="wizard-nav">
             <button
-              className="btn btn-ghost"
+              className="link-btn"
               onClick={goBack}
               disabled={stepIndex === 0}
             >
-              Previous
+              ← Previous
             </button>
 
             {stepIndex < STEPS.length - 1 ? (
-              <button className="btn btn-primary" onClick={goNext} disabled={!canAdvance()}>
-                Next step
+              <button className="circle-btn" onClick={goNext} disabled={!canAdvance()} aria-label="Next step">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </button>
             ) : (
               <span className="wizard-nav-end-hint">

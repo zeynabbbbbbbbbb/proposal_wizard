@@ -38,7 +38,7 @@ export default function ReviewStep({ data, generated, onGenerate }) {
             Proposal generated — PDF export hooks in here later
           </div>
         ) : (
-          <button className="btn btn-primary" onClick={onGenerate}>
+          <button className="pill-btn" onClick={onGenerate}>
             Generate proposal
           </button>
         )}

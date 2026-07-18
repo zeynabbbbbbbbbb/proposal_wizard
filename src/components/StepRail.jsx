@@ -8,21 +8,17 @@ export default function StepRail({ steps, currentIndex, onStepClick }) {
         const isLast = i === steps.length - 1;
 
         return (
-          <div className="rail-item" key={step.id}>
-            <div className="rail-node-row">
-              <div className="rail-node-col">
-                <button
-                  className={`rail-node rail-node--${state}`}
-                  onClick={() => onStepClick(i)}
-                  disabled={state === 'upcoming'}
-                  aria-current={state === 'active' ? 'step' : undefined}
-                >
-                  {state === 'done' ? '✓' : i + 1}
-                </button>
-                <span className={`rail-label rail-label--${state}`}>{step.label}</span>
-              </div>
-              {!isLast && <div className={`rail-line rail-line--${state === 'done' ? 'filled' : 'empty'}`} />}
-            </div>
+          <div key={step.id} style={{ display: 'flex', alignItems: 'center', flex: isLast ? '0 0 auto' : 1 }}>
+            <button
+              className={`rail-node rail-node--${state}`}
+              onClick={() => onStepClick(i)}
+              disabled={state === 'upcoming'}
+              aria-current={state === 'active' ? 'step' : undefined}
+              title={step.label}
+            >
+              {state === 'done' ? '✓' : i + 1}
+            </button>
+            {!isLast && <div className={`rail-line rail-line--${state === 'done' ? 'filled' : 'empty'}`} />}
           </div>
         );
       })}
