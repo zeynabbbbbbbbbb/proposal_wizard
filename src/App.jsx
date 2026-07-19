@@ -74,7 +74,9 @@ export default function App() {
         <div className="wizard-form-panel">
           <StepRail steps={STEPS} currentIndex={stepIndex} onStepClick={goToStep} />
 
-          <div className="wizard-body">
+          <div className="wizard-mobile-label">{STEPS[stepIndex].label}</div>
+
+          <div className="wizard-body" key={stepIndex}>
             {renderStep()}
           </div>
 

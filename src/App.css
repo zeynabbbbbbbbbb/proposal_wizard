@@ -26,6 +26,22 @@
 
 .wizard-body {
   flex: 1;
+  animation: step-in 0.32s ease;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wizard-mobile-label {
+  display: none;
 }
 
 .wizard-nav {
@@ -81,6 +97,10 @@
 
 .circle-btn:not(:disabled):hover {
   transform: translateY(-2px);
+}
+
+.circle-btn:not(:disabled):active {
+  transform: translateY(0) scale(0.95);
 }
 
 .pill-btn {
@@ -232,13 +252,48 @@
 }
 
 @media (max-width: 720px) {
+  .wizard-shell {
+    padding: 28px 14px;
+    align-items: flex-start;
+  }
   .wizard-card {
-    border-radius: 24px;
+    border-radius: 22px;
+    min-height: 0;
   }
   .wizard-form-panel {
-    padding: 26px 22px 26px;
+    padding: 24px 20px 24px;
+  }
+  .wizard-mobile-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    align-self: flex-start;
+  }
+  .step-title {
+    font-size: 21px;
   }
   .field-row {
     grid-template-columns: 1fr;
+  }
+  .circle-btn {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 400px) {
+  .wizard-shell {
+    padding: 18px 10px;
+  }
+  .wizard-form-panel {
+    padding: 20px 16px 20px;
   }
 }
