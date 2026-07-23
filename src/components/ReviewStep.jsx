@@ -17,7 +17,22 @@ export default function ReviewStep({ data, generated, onGenerate }) {
 
       <div className="review-block">
         <h4>Scope</h4>
-        {scope.summary ? <p style={{ fontSize: 14, lineHeight: 1.6 }}>{scope.summary}</p> : <p className="review-empty">No scope summary provided yet.</p>}
+        {scope.summary ? (
+          <>
+            <p style={{ fontSize: 14, lineHeight: 1.6, marginBottom: 10 }}>{scope.summary}</p>
+            {scope.deliverables?.filter((d) => d.included && d.text.trim()).length > 0 && (
+              <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
+                {scope.deliverables
+                  .filter((d) => d.included && d.text.trim())
+                  .map((d) => (
+                    <li key={d.id}>{d.text}</li>
+                  ))}
+              </ul>
+            )}
+          </>
+        ) : (
+          <p className="review-empty">No scope selected yet.</p>
+        )}
       </div>
 
       <div className="review-block">

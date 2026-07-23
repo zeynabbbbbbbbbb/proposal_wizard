@@ -18,7 +18,7 @@ const STEPS = [
 
 const EMPTY_DATA = {
   client: { name: '', company: '', email: '', phone: '', industry: '' },
-  scope: { summary: '', deliverables: '' },
+  scope: { serviceId: '', summary: '', deliverables: [] },
   timeline: { startDate: '', duration: '', milestoneNote: '' },
   requirements: { notes: '' },
 };
@@ -39,7 +39,7 @@ export default function App() {
   };
 
   const isClientValid = data.client.name.trim() && data.client.company.trim();
-  const isScopeValid = data.scope.summary.trim().length > 0;
+  const isScopeValid = data.scope.serviceId && data.scope.summary.trim().length > 0;
 
   const canAdvance = () => {
     if (stepIndex === 0) return isClientValid;

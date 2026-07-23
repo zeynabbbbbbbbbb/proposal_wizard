@@ -251,7 +251,104 @@
   font-weight: 600;
 }
 
+/* ---------- Service picker (Task 12) ---------- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.service-card {
+  text-align: left;
+  border: 1.5px solid var(--cream-dim);
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: 13px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: all 0.15s ease;
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  color: var(--text-dark);
+}
+
+.service-card--selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- Deliverables checklist ---------- */
+.deliverable-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deliverable-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.deliverable-row input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+
+.deliverable-input {
+  flex: 1;
+  background: #ffffff;
+  border: 1.5px solid var(--cream-dim);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13.5px;
+  color: var(--text-dark);
+}
+
+.deliverable-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.deliverable-remove {
+  border: none;
+  background: none;
+  color: var(--text-faint);
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px 6px;
+  flex-shrink: 0;
+}
+
+.deliverable-remove:hover {
+  color: var(--danger);
+}
+
+.add-deliverable-btn {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 2px;
+  margin-top: 4px;
+}
+
+.add-deliverable-btn:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 720px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
   .wizard-shell {
     padding: 28px 14px;
     align-items: flex-start;
